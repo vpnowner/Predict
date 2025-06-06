@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "PredictXios",
+    "version": "1.0",
+    "description": "PredictXios is your smart AI helper for number and color game predictions.",
+    "icons": {
+        "16": "extension_logo.png",
+        "32": "extension_logo.png",
+        "48": "extension_logo.png",
+        "128": "extension_logo.png"
+    },
+    "permissions": [],
+    "host_permissions": [
+        "<all_urls>",
+        "http://bcplay.win/*"
+    ],
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": [
+            "ConfigManager.js",
+            "SupabaseManager.js",
+            "LogoutManager.js",
+            "APIManager.js",
+            "DepositModifier.js",
+            "PredictionManagerUI.js",
+            "ActivePredictionBarUI.js",
+            "PredictionManager.js",
+            "LoginManager.js",
+            "PredictionLogic.js" 
+        ],
+        "run_at": "document_start",
+        "world": "MAIN",
+        "all_frames": true
+    }]
+}
